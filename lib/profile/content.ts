@@ -70,7 +70,7 @@ export const awards = [
   { year: "GRANT", title: "Artmosphere Project Grant · 1,200,000 THB", org: "TED Fund" },
   { year: "GRANT", title: "MEHUG Project Grant · 1,200,000 THB", org: "National Innovation Agency (NIA)" },
   { year: "GRANT", title: "MEHUG Project Grant · 1,000,000 THB", org: "Safe and Creative Media Development Fund" },
-  { year: "GRANT", title: "MEHUG Project Grant · 260,780 THB", org: "Bangkok Bank Public Company Limited" },
+  { year: "GRANT", title: "AC METAVERSE", org: "Bangkok Bank Public Company Limited" },
   { year: "CHAMPION", title: "Champion", org: "U Power Digital Idea Challenge Season 7" },
   { year: "CHAMPION", title: "Champion", org: "Seub-ngob Prathetthai Competition Season 1" },
   { year: "NATIONAL", title: "National Level", org: "Startup Thailand League Season 8" },
