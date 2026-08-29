@@ -168,7 +168,7 @@ export function ProfilePage({ locale }: { locale: Locale }) {
               <SectionTitle number="05" eyebrow={p.awardsEyebrow} title={p.awardsTitle} description={p.awardsIntro} />
               <div className={styles.awardMeta} aria-label={p.awardsEyebrow}>
                 <span><strong>{String(awards.length).padStart(2, "0")}</strong><small>{p.awardsEyebrow}</small></span>
-                <span><strong>฿5.25M+</strong><small>{p.grantFunding}</small></span>
+                <span><strong>฿6.45M+</strong><small>{p.grantFunding}</small></span>
               </div>
               <a className={styles.awardsLink} href="https://www.linkedin.com/in/podsawee-wanatham/" target="_blank" rel="noopener noreferrer"><span>in</span>{p.viewLinkedIn}<b>↗</b></a>
             </div>

@@ -67,6 +67,7 @@ export const educations = [
 export const awards = [
   { year: "2025", title: "LCS Project Grant · 1,500,000 THB", org: "TED Fund · Batch 1/2025" },
   { year: "2024", title: "MEHUG Project Grant · 1,290,000 THB", org: "TED Fund · Batch 1/2024" },
+  { year: "GRANT", title: "Artmosphere Project Grant · 1,200,000 THB", org: "TED Fund" },
   { year: "GRANT", title: "MEHUG Project Grant · 1,200,000 THB", org: "National Innovation Agency (NIA)" },
   { year: "GRANT", title: "MEHUG Project Grant · 1,000,000 THB", org: "Safe and Creative Media Development Fund" },
   { year: "GRANT", title: "MEHUG Project Grant · 260,780 THB", org: "Bangkok Bank Public Company Limited" },
