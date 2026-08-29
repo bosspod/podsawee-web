@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { gradePath, profilePath, type Locale } from "@/lib/i18n/config";
 
 const site = "https://podsawee.com";
@@ -16,19 +15,8 @@ const gradeCopy = {
 
 const alternates = (grade: boolean, origin: string) => ({ languages: { "th": `${origin}${grade ? "/grade" : "/"}`, "en": `${origin}${grade ? "/en/grade" : "/en"}`, "zh-CN": `${origin}${grade ? "/zh-CN/grade" : "/zh-CN"}`, "x-default": `${origin}${grade ? "/grade" : "/"}` } });
 
-export async function requestOrigin(): Promise<string> {
-  if (process.env.NODE_ENV === "production") return site;
-
-  const requestHeaders = await headers();
-  const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host"))?.split(",")[0].trim();
-  if (!host) return site;
-
-  const forwardedProtocol = requestHeaders.get("x-forwarded-proto")?.split(",")[0].trim();
-  const protocol = forwardedProtocol === "http" || forwardedProtocol === "https"
-    ? forwardedProtocol
-    : host.startsWith("localhost") || host.startsWith("127.0.0.1") ? "http" : "https";
-
-  try { return new URL(`${protocol}://${host}`).origin; } catch { return site; }
+export function requestOrigin(): string {
+  return site;
 }
 
 export function profileMetadata(locale: Locale, assetOrigin = site): Metadata {
