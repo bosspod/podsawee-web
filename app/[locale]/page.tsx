@@ -1,0 +1,7 @@
+import { notFound } from "next/navigation";
+import { ProfilePage } from "@/components/profile/ProfilePage";
+import { StructuredData } from "@/components/ui/StructuredData";
+import { isLocale } from "@/lib/i18n/config";
+import { profileMetadata, requestOrigin } from "@/lib/seo/metadata";
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) { const { locale } = await params; return isLocale(locale) ? profileMetadata(locale, await requestOrigin()) : {}; }
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) { const { locale } = await params; if (!isLocale(locale) || locale === "th") notFound(); return <><StructuredData data={{ "@context": "https://schema.org", "@graph": [{ "@type": "ProfilePage", url: `https://podsawee.com/${locale}`, inLanguage: locale, mainEntity: { "@id": "https://podsawee.com/#podsawee" } }, { "@type": "Person", "@id": "https://podsawee.com/#podsawee", name: "Podsawee Wanatham", image: "https://podsawee.com/images/podsawee-portrait.jpg", jobTitle: ["Entrepreneur", "Full-Stack Developer", "Cyber Security"], alumniOf: [{ "@type": "CollegeOrUniversity", name: "King Mongkut's University of Technology Thonburi" }, { "@type": "CollegeOrUniversity", name: "Chulalongkorn University" }, { "@type": "EducationalOrganization", name: "Assumption College" }, { "@type": "EducationalOrganization", name: "Expert Programming Tutor Institute" }] }] }} /><ProfilePage locale={locale} /></>; }
